@@ -81,7 +81,7 @@ class Blinky(Sprite):
                 distanceX = self.rect.x - self.target.rect.x
                 distanceY = self.rect.y - self.target.rect.y
 
-        #Старая версия
+        #Старая версия 1.0
         #if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
         #    fork = self.forks[str(self.rect.x) + "," + str(self.rect.y)]
         #    distanceX = self.rect.x - self.target.rect.x
