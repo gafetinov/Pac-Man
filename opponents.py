@@ -76,42 +76,39 @@ class Blinky(Sprite):
 
 
     def hunt(self):
-        while self.target.rect.x != self.rect.x and self.target.rect.y != self.rect.y:
-            if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
-                distanceX = self.rect.x - self.target.rect.x
-                distanceY = self.rect.y - self.target.rect.y
+        #while self.target.rect.x != self.rect.x and self.target.rect.y != self.rect.y:
+         #   if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
+          #      distanceX = self.rect.x - self.target.rect.x
+           #     distanceY = self.rect.y - self.target.rect.y
 
-        #Старая версия 1.0
-        #if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
-        #    fork = self.forks[str(self.rect.x) + "," + str(self.rect.y)]
-        #    distanceX = self.rect.x - self.target.rect.x
-        #    distanceY = self.rect.y - self.target.rect.y
-        #    if math.fabs(distanceX) < math.fabs(distanceY):
-        #        if distanceY > 0:
-        #            if fork[0] == 1 and self.dy != -SPEED:
-        #                self.dy = -SPEED
-        #                self.dx = 0
-        #            else:
-        #                self.goFree(fork)
-        #        else:
-        #            if fork[2] == 1 and self.dy != SPEED:
-        #                self.dy = SPEED
-        #                self.dx = 0
-        #            else: self.goFree(fork)
-        #    else:
-        #        if distanceX > 0:
-        #            if fork[3] == 1 and self.dx != SPEED:
-        #                self.dx = -SPEED
-        #                self.dy = 0
-        #            else: self.goFree(fork)
-        #        else:
-        #            if fork[1] == 1 and self.dx != -SPEED:
-        #                self.dx = SPEED
-        #                self.dy = 0
-        #            else: self.goFree(fork)
-
-
-    def searchWay(self):
+        #Old version 1.0
+        if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
+            fork = self.forks[str(self.rect.x) + "," + str(self.rect.y)]
+            distanceX = self.rect.x - self.target.rect.x
+            distanceY = self.rect.y - self.target.rect.y
+            if math.fabs(distanceX) < math.fabs(distanceY):
+                if distanceY > 0:
+                    if fork[0] == 1 and self.dy != -SPEED:
+                        self.dy = -SPEED
+                        self.dx = 0
+                    else:
+                        self.goFree(fork)
+                else:
+                    if fork[2] == 1 and self.dy != SPEED:
+                        self.dy = SPEED
+                        self.dx = 0
+                    else: self.goFree(fork)
+            else:
+                if distanceX > 0:
+                    if fork[3] == 1 and self.dx != SPEED:
+                        self.dx = -SPEED
+                        self.dy = 0
+                    else: self.goFree(fork)
+                else:
+                    if fork[1] == 1 and self.dx != -SPEED:
+                        self.dx = SPEED
+                        self.dy = 0
+                    else: self.goFree(fork)
 
 
     def goFree(self, fork):
