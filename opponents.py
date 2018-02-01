@@ -76,12 +76,6 @@ class Blinky(Sprite):
 
 
     def hunt(self):
-        #while self.target.rect.x != self.rect.x and self.target.rect.y != self.rect.y:
-         #   if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
-          #      distanceX = self.rect.x - self.target.rect.x
-           #     distanceY = self.rect.y - self.target.rect.y
-
-        #Old version 1.0
         if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
             fork = self.forks[str(self.rect.x) + "," + str(self.rect.y)]
             distanceX = self.rect.x - self.target.rect.x
