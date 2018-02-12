@@ -6,6 +6,7 @@ FOODS = []
 ENERGIZERS = []
 TIME_TRAPS = []
 
+
 class Map(Sprite):
     def __init__(self, x, y, element):
         Sprite.__init__(self)

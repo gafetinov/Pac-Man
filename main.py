@@ -86,7 +86,7 @@ class Menu:
             mp = pygame.mouse.get_pos()
             for i in self.punkts:
                 if mp[0] > i[0] and mp[0] < i[0]+155 and mp[1] > i[1] and mp[1] < i[1]+50:
-                    punkt = i[5]
+                      punkt = i[5]
             self.render(screen, font_menu, punkt)
 
             for e in pygame.event.get():

@@ -74,7 +74,6 @@ class Blinky(Sprite):
             self.dy = 0
             self.is_hunting = True
 
-
     def hunt(self):
         if (str(self.rect.x) + "," + str(self.rect.y)) in self.forks:
             fork = self.forks[str(self.rect.x) + "," + str(self.rect.y)]
@@ -91,19 +90,21 @@ class Blinky(Sprite):
                     if fork[2] == 1 and self.dy != SPEED:
                         self.dy = SPEED
                         self.dx = 0
-                    else: self.goFree(fork)
+                    else:
+                        self.goFree(fork)
             else:
                 if distanceX > 0:
                     if fork[3] == 1 and self.dx != SPEED:
                         self.dx = -SPEED
                         self.dy = 0
-                    else: self.goFree(fork)
+                    else:
+                        self.goFree(fork)
                 else:
                     if fork[1] == 1 and self.dx != -SPEED:
                         self.dx = SPEED
                         self.dy = 0
-                    else: self.goFree(fork)
-
+                    else:
+                        self.goFree(fork)
 
     def goFree(self, fork):
         if fork[0] == 1 and self.dy != SPEED:
@@ -118,7 +119,6 @@ class Blinky(Sprite):
         elif fork[3] == 1 and self.dx != -SPEED:
             self.dx = -SPEED
             self.dy = 0
-
 
     def teleport(self):
         if self.rect.x < -20 and self.rect.y == 270 and self.dx < 0:
